@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://b33xo2fpkd31k"]
+
+[ext_resource type="Script" uid="uid://xfmomg6uvlkx" path="res://scripts/tips.gd" id="1_b4tqj"]
+[ext_resource type="FontFile" uid="uid://b3tbevv3nmiq8" path="res://srcs/fonts/AlimamaDaoLiTi.otf" id="1_k5vhq"]
+
+[sub_resource type="Animation" id="Animation_b4tqj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1027, 915.94)]
+}
+
+[sub_resource type="Animation" id="Animation_0houo"]
+resource_name = "TextOff"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.666667),
+"transitions": PackedFloat32Array(2.54912, 2.54912),
+"update": 0,
+"values": [Vector2(1027, 823), Vector2(1027, 915.94)]
+}
+
+[sub_resource type="Animation" id="Animation_k5vhq"]
+resource_name = "TextOn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(0.267943, 0.267943),
+"update": 0,
+"values": [Vector2(1027, 915.94), Vector2(1027, 823)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0houo"]
+_data = {
+&"RESET": SubResource("Animation_b4tqj"),
+&"TextOff": SubResource("Animation_0houo"),
+&"TextOn": SubResource("Animation_k5vhq")
+}
+
+[node name="Tips" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4tqj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1027.0
+offset_top = 915.94
+offset_right = 1890.0
+offset_bottom = 1146.94
+theme_override_fonts/font = ExtResource("1_k5vhq")
+theme_override_font_sizes/font_size = 35
+text = "游戏提示"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Label")
+libraries = {
+&"": SubResource("AnimationLibrary_0houo")
+}

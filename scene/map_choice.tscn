@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnon0tlkdtljx"]
+
+[ext_resource type="Script" uid="uid://c4ne1euvc1ort" path="res://scripts/map_choice.gd" id="1_1tvlq"]
+[ext_resource type="FontFile" uid="uid://b3tbevv3nmiq8" path="res://srcs/fonts/AlimamaDaoLiTi.otf" id="1_hnpoo"]
+
+[node name="MapChoice" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1tvlq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -841.0
+offset_top = -419.0
+offset_right = -445.0
+offset_bottom = -352.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_hnpoo")
+theme_override_font_sizes/font_size = 66
+text = "选择一个房间"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 228.0
+offset_right = 1773.0
+offset_bottom = 935.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 520

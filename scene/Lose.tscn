@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://cqif4267fxo6k"]
+
+[ext_resource type="Script" uid="uid://c7cki0wb21h4q" path="res://scripts/lose.gd" id="1_81216"]
+[ext_resource type="FontFile" uid="uid://b3tbevv3nmiq8" path="res://srcs/fonts/AlimamaDaoLiTi.otf" id="1_t0fls"]
+[ext_resource type="FontFile" uid="uid://cy7c7bq6hsq1j" path="res://srcs/fonts/AlimamaDaoLiTi.ttf" id="3_v5rin"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v5rin"]
+load_path = "res://.godot/imported/Goblin2.png-a3604e69e69185f213edc1912af47673.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81216"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nymlp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7a36"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0gr2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_81216")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -816.0
+offset_top = -193.0
+offset_right = -490.0
+offset_bottom = -126.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t0fls")
+theme_override_font_sizes/font_size = 66
+text = "你死了"
+autowrap_mode = 3
+
+[node name="Introduce" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -812.0
+offset_top = -74.0
+offset_right = -35.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_t0fls")
+theme_override_font_sizes/font_size = 45
+text = "经警方调查，现场除了一滩血渍以外似乎什么都没有，遂放弃调查。"
+autowrap_mode = 3
+
+[node name="Goblin2" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.301961)
+layout_mode = 0
+offset_left = 1053.0
+offset_top = -5.0
+offset_right = 2058.0
+offset_bottom = 1085.0
+texture = SubResource("CompressedTexture2D_v5rin")
+
+[node name="Goon" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 154.0
+offset_top = 617.0
+offset_right = 354.0
+offset_bottom = 668.0
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_v5rin")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_81216")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nymlp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o7a36")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b0gr2")
+text = "返回主页"
+
+[node name="ColorRect" type="ColorRect" parent="Goon"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -21.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[connection signal="pressed" from="Goon" to="." method="_on_leave_pressed"]

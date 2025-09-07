@@ -1,0 +1,194 @@
+[gd_scene load_steps=10 format=3 uid="uid://baqbutxerw8lw"]
+
+[ext_resource type="Script" uid="uid://boggb6hrhid4g" path="res://scripts/map_panel.gd" id="1_3t0hu"]
+[ext_resource type="FontFile" uid="uid://b3tbevv3nmiq8" path="res://srcs/fonts/AlimamaDaoLiTi.otf" id="1_kr5m0"]
+[ext_resource type="FontFile" uid="uid://cy7c7bq6hsq1j" path="res://srcs/fonts/AlimamaDaoLiTi.ttf" id="1_x1tdp"]
+[ext_resource type="Texture2D" uid="uid://do4pdnnpqx5ks" path="res://icon.svg" id="2_x1tdp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21xf6"]
+bg_color = Color(0.0962047, 0.0962048, 0.0962047, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t0hu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5tl8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxd47"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ydl1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MapPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3t0hu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 502.0
+offset_bottom = 749.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_21xf6")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -252.5
+offset_right = 64.0
+offset_bottom = -124.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_x1tdp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -177.0
+offset_top = -134.0
+offset_right = 178.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 35
+alignment = 1
+
+[node name="Goon" type="Button" parent="Panel/HBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_x1tdp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_3t0hu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5tl8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sxd47")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ydl1")
+text = "进入现场"
+
+[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer/Goon"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(0, 1, 0, 0.34902)
+
+[node name="Details" type="Button" parent="Panel/HBoxContainer"]
+visible = false
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("1_x1tdp")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_3t0hu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x5tl8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sxd47")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5ydl1")
+text = "查看详情"
+
+[node name="ColorRect" type="ColorRect" parent="Panel/HBoxContainer/Details"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[node name="MapName" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.0
+offset_top = 56.0
+offset_right = 121.0
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_kr5m0")
+theme_override_font_sizes/font_size = 40
+text = "很普通的迷宫"
+horizontal_alignment = 1
+
+[node name="MapIntroduce" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -82.5
+offset_right = 193.0
+offset_bottom = 84.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_kr5m0")
+theme_override_font_sizes/font_size = 30
+text = "相传，1840年4月4日，阁术女会的五名成员来到了这个迷宫并试图探险，后来5人均了无音讯。州音日报记者希望你来出面调查此事。"
+autowrap_mode = 3
+
+[node name="Nandu" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = 148.5
+offset_right = 193.0
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_kr5m0")
+theme_override_font_sizes/font_size = 30
+text = "难度："
+autowrap_mode = 3
+
+[node name="MapDifficuty" type="Label" parent="Panel"]
+modulate = Color(0.478431, 0, 0.839216, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = 148.5
+offset_right = 193.0
+offset_bottom = 179.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_kr5m0")
+theme_override_font_sizes/font_size = 30
+text = "新手"
+autowrap_mode = 3
+
+[connection signal="pressed" from="Panel/HBoxContainer/Goon" to="." method="_on_startmap_pressed"]

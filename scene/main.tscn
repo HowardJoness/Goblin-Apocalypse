@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=3 uid="uid://gk5a8awxsh3w"]
+
+[ext_resource type="Texture2D" uid="uid://bllen1msbq7yx" path="res://srcs/images/Goblin.png" id="1_itxqv"]
+[ext_resource type="Script" uid="uid://d053rg1o30yer" path="res://scripts/main.gd" id="1_wp4xf"]
+[ext_resource type="FontFile" uid="uid://b3tbevv3nmiq8" path="res://srcs/fonts/AlimamaDaoLiTi.otf" id="2_v0l8b"]
+[ext_resource type="FontFile" uid="uid://cy7c7bq6hsq1j" path="res://srcs/fonts/AlimamaDaoLiTi.ttf" id="4_brvut"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brvut"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ha60"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j5ol"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1hux"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wp4xf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.435294)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -817.0
+offset_top = -545.5
+offset_bottom = 545.5
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_itxqv")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 87.0
+offset_right = 620.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("2_v0l8b")
+theme_override_font_sizes/font_size = 86
+text = "哥布林启示录"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 266.0
+offset_right = 470.0
+offset_bottom = 944.0
+theme_override_constants/separation = 110
+
+[node name="Begin" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_brvut")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/focus = SubResource("StyleBoxFlat_brvut")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ha60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j5ol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1hux")
+text = "开始游戏"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Begin"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[node name="CharactorChoice" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_brvut")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/focus = SubResource("StyleBoxFlat_brvut")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ha60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j5ol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1hux")
+text = "选择形象"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/CharactorChoice"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[node name="GameSetting" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_brvut")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/focus = SubResource("StyleBoxFlat_brvut")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ha60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j5ol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1hux")
+text = "游戏设置"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/GameSetting"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -42.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[node name="ExitGame" type="Button" parent="VBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("4_brvut")
+theme_override_font_sizes/font_size = 86
+theme_override_styles/focus = SubResource("StyleBoxFlat_brvut")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0ha60")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j5ol")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1hux")
+text = "退出游戏"
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/ExitGame"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -40.0
+offset_right = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[connection signal="pressed" from="VBoxContainer/Begin" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]

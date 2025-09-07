@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cupcxy3mbepn"
+path="res://.godot/imported/among us walking sound effect.mp3-1c19f279809581169be5fac04436c478.mp3str"
+
+[deps]
+
+source_file="res://srcs/sounds/among us walking sound effect.mp3"
+dest_files=["res://.godot/imported/among us walking sound effect.mp3-1c19f279809581169be5fac04436c478.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

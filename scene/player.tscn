@@ -1,0 +1,203 @@
+[gd_scene load_steps=28 format=3 uid="uid://dj361ax6pb4d5"]
+
+[ext_resource type="Script" uid="uid://blb6dslclsliy" path="res://scripts/player.gd" id="1_xo3ru"]
+[ext_resource type="Texture2D" uid="uid://cqbaeya3jywlt" path="res://srcs/images/idle.png" id="2_fvtld"]
+[ext_resource type="Texture2D" uid="uid://ck03qkfhpsgl3" path="res://srcs/images/walk.png" id="3_ct4mp"]
+[ext_resource type="AudioStream" uid="uid://cupcxy3mbepn" path="res://srcs/sounds/among us walking sound effect.mp3" id="4_ct4mp"]
+[ext_resource type="Texture2D" uid="uid://bllen1msbq7yx" path="res://srcs/images/Goblin.png" id="5_oh5ij"]
+[ext_resource type="AudioStream" uid="uid://dmndw1t0nn2cg" path="res://srcs/sounds/GoblinShout.MP3" id="6_hp4bs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s4jxa"]
+size = Vector2(12, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh5ij"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp4bs"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(48, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2vtq"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(96, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fvbb"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(144, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ml7e8"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(192, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihjo1"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(240, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk1vr"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(288, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34jf3"]
+atlas = ExtResource("2_fvtld")
+region = Rect2(336, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7b46"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4wxg"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(48, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bup7g"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(96, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ja17"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(144, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4iqv"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(192, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42h83"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(240, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuf2t"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(288, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrjdb"]
+atlas = ExtResource("3_ct4mp")
+region = Rect2(336, 320, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kk4ol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh5ij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hp4bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2vtq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fvbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ml7e8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihjo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk1vr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34jf3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7b46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4wxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bup7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ja17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4iqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42h83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuf2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrjdb")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_fvtld"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ct4mp"]
+gradient = SubResource("Gradient_fvtld")
+fill = 1
+fill_from = Vector2(0.512821, 0.472934)
+fill_to = Vector2(0.937322, 0.0512821)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2vtq"]
+size = Vector2(18, 28)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(60, 67)
+script = ExtResource("1_xo3ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.0399323, 0.21991)
+scale = Vector2(0.959997, 0.959997)
+shape = SubResource("RectangleShape2D_s4jxa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.0399323, 0.71991)
+scale = Vector2(0.959997, 0.959997)
+sprite_frames = SubResource("SpriteFrames_kk4ol")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.000123359
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(10, 10)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_ct4mp")
+texture_scale = 1.17
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ct4mp")
+autoplay = true
+parameters/looping = true
+
+[node name="Goblin" type="Sprite2D" parent="."]
+position = Vector2(-20, -2)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("5_oh5ij")
+
+[node name="Area2D" type="Area2D" parent="Goblin"]
+position = Vector2(600, 80)
+scale = Vector2(40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goblin/Area2D"]
+position = Vector2(-44, -1)
+shape = SubResource("RectangleShape2D_g2vtq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Goblin"]
+position = Vector2(160, 0)
+scale = Vector2(40, 40)
+stream = ExtResource("6_hp4bs")
+volume_db = -5.0
+autoplay = true
+max_distance = 150.0
+parameters/looping = true
