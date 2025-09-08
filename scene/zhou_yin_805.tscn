@@ -143,6 +143,7 @@ scale = Vector2(7.53906, 5.05469)
 texture = ExtResource("9_0xisu")
 
 [node name="ToolPoint_Rader" type="Area2D" parent="."]
+position = Vector2(2, 145)
 
 [node name="Sprite2D" type="Sprite2D" parent="ToolPoint_Rader"]
 position = Vector2(386, 35)

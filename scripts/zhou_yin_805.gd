@@ -21,50 +21,23 @@ func _ready() -> void:
 	$Player.add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	# 布置道具点
+	var tool_points = [$ToolPoint_1, $ToolPoint_2, $ToolPoint_3, $ToolPoint_4]
 	ToolPointThing.shuffle() # 随机分布物品
-	match ToolPointThing[0]:
+
+	for i in range(tool_points.size()):
+		var current_tool_point = tool_points[i]
+		var current_thing = ToolPointThing[i]
+
+		match current_thing:
+			"FlashLight":
+				current_tool_point.get_node("AnimatedSprite2D").frame = 0
+			"Door":
+				current_tool_point.get_node("AnimatedSprite2D").frame = 1
+			"DoorKey":
+				current_tool_point.get_node("AnimatedSprite2D").frame = 2
+			"NOTHING":
+				current_tool_point.get_node("AnimatedSprite2D").visible = false
 		
-		"FlashLight":
-			$ToolPoint_1/AnimatedSprite2D.frame = 0
-		"Door":
-			$ToolPoint_1/AnimatedSprite2D.frame = 1
-		"DoorKey":
-			$ToolPoint_1/AnimatedSprite2D.frame = 2
-		"NOTHING":
-			$ToolPoint_1/AnimatedSprite2D.visible = false
-		
-			
-	match ToolPointThing[1]:
-		"FlashLight":
-			$ToolPoint_2/AnimatedSprite2D.frame = 0
-		"Door":
-			$ToolPoint_2/AnimatedSprite2D.frame = 1
-		"DoorKey":
-			$ToolPoint_2/AnimatedSprite2D.frame = 2
-		"NOTHING":
-			$ToolPoint_2/AnimatedSprite2D.visible = false
-			
-	match ToolPointThing[2]:
-		"FlashLight":
-			$ToolPoint_3/AnimatedSprite2D.frame = 0
-		"Door":
-			$ToolPoint_3/AnimatedSprite2D.frame = 1
-		"DoorKey":
-			$ToolPoint_3/AnimatedSprite2D.frame = 2
-		"NOTHING":
-			$ToolPoint_3/AnimatedSprite2D.visible = false
-	match ToolPointThing[3]:
-		"FlashLight":
-			$ToolPoint_4/AnimatedSprite2D.frame = 0
-		"Door":
-			$ToolPoint_4/AnimatedSprite2D.frame = 1
-		"DoorKey":
-			$ToolPoint_4/AnimatedSprite2D.frame = 2
-		"NOTHING":
-			$ToolPoint_4/AnimatedSprite2D.visible = false
-		
-	
-	
 	await get_tree().create_timer(1).timeout
 	$Player._flashlighton()
 	_goGoblin()
