@@ -12,6 +12,11 @@ func add_map():
 	item_instance.target_scene_path = "uid://di7tdmhpolkqj"
 	item_instance.map_image_path = "res://srcs/images/容器 20@1x.png"
 	item_instance.difficuty = 1
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		SceneManager.change_scene("uid://gk5a8awxsh3w")
+		
 func _ready() -> void:
 	# 进入地图选择场景后的准备工作
 	add_map()
