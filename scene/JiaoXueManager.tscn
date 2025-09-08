@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=4 uid="uid://btb3qq41j5jv8"]
 
-[ext_resource type="Script" uid="uid://c55gnl42aq3fs" path="res://scripts/zhou_yin_805.gd" id="1_rpbya"]
-[ext_resource type="Texture2D" uid="uid://bkghdurfv6t8w" path="res://srcs/images/805wall1.png" id="2_jcffu"]
+[ext_resource type="Script" uid="uid://dc0jkkmalw1fo" path="res://scripts/jiao_xue_manager.gd" id="1_rpbya"]
+[ext_resource type="Texture2D" uid="uid://madfnt80w7fe" path="res://srcs/images/JXMwall1.png" id="2_rpbya"]
 [ext_resource type="PackedScene" uid="uid://dj361ax6pb4d5" path="res://scene/player.tscn" id="3_xg0q3"]
 [ext_resource type="PackedScene" uid="uid://b33xo2fpkd31k" path="res://scene/tips.tscn" id="4_q7cv5"]
 [ext_resource type="Script" uid="uid://bdv5l47v4i435" path="res://scripts/Rader_viewport.gd" id="5_67tbe"]
@@ -16,7 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://dphxmrbeedkde" path="res://srcs/sounds/Among Us (Kill) - Sound Effect (HD).mp3" id="14_u6w0v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obktj"]
-texture = ExtResource("2_jcffu")
+texture = ExtResource("2_rpbya")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -69,7 +69,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ZhouYin_805" type="Node2D"]
+[node name="JiaoXueManager" type="Node2D"]
 script = ExtResource("1_rpbya")
 metadata/_edit_vertical_guides_ = [0.0, 464.0]
 metadata/_edit_horizontal_guides_ = [0.0, 337.0]
