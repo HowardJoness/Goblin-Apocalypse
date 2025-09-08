@@ -79,6 +79,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAABAAAAAAAAAAEAAAABAAAAAAAAAAIAAAABAAA
 tile_set = SubResource("TileSet_y7q3i")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+visible = false
 blend_mode = 1
 
 [node name="Player" parent="." instance=ExtResource("2_obktj")]
@@ -190,6 +191,20 @@ frame_progress = 0.492913
 position = Vector2(386, 35)
 shape = SubResource("RectangleShape2D_0xisu")
 
+[node name="ToolPoint_4" type="Area2D" parent="."]
+position = Vector2(-356, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ToolPoint_4"]
+position = Vector2(386, 35)
+scale = Vector2(0.02, 0.02)
+sprite_frames = SubResource("SpriteFrames_nx4l5")
+frame = 2
+frame_progress = 0.492913
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ToolPoint_4"]
+position = Vector2(386, 35)
+shape = SubResource("RectangleShape2D_0xisu")
+
 [node name="KillSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_4rdtx")
 
@@ -198,3 +213,4 @@ stream = ExtResource("14_4rdtx")
 [connection signal="body_entered" from="ToolPoint_1" to="." method="_on_touch_ToolPoint1"]
 [connection signal="body_entered" from="ToolPoint_2" to="." method="_on_touch_ToolPoint2"]
 [connection signal="body_entered" from="ToolPoint_3" to="." method="_on_touch_ToolPoint3"]
+[connection signal="body_entered" from="ToolPoint_4" to="." method="_on_touch_ToolPoint4"]

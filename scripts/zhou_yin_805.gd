@@ -6,7 +6,7 @@ extends Node2D
 # 调用这个函数就开始让 Goblin 跟随 player
 var follow_player: Node2D = null  # 当前跟随的玩家
 var GoblinIsOn: bool = false
-var ToolPointThing: Array = ["FlashLight", "Door", "DoorKey"] # 道具点内容
+var ToolPointThing: Array = ["FlashLight", "Door", "DoorKey", "NOTHING"] # 道具点内容
 var player_bag: Array = [] # 玩家物品栏
 const player_camera_zoom: float = 10.0 # 玩家初始相机大小
 const player_flashelight_scale: float = 1.17 # 玩家初始手电筒大小
@@ -23,13 +23,16 @@ func _ready() -> void:
 	# 布置道具点
 	ToolPointThing.shuffle() # 随机分布物品
 	match ToolPointThing[0]:
+		
 		"FlashLight":
 			$ToolPoint_1/AnimatedSprite2D.frame = 0
-			print(1)
 		"Door":
 			$ToolPoint_1/AnimatedSprite2D.frame = 1
 		"DoorKey":
 			$ToolPoint_1/AnimatedSprite2D.frame = 2
+		"NOTHING":
+			$ToolPoint_1/AnimatedSprite2D.visible = false
+		
 			
 	match ToolPointThing[1]:
 		"FlashLight":
@@ -38,6 +41,9 @@ func _ready() -> void:
 			$ToolPoint_2/AnimatedSprite2D.frame = 1
 		"DoorKey":
 			$ToolPoint_2/AnimatedSprite2D.frame = 2
+		"NOTHING":
+			$ToolPoint_2/AnimatedSprite2D.visible = false
+			
 	match ToolPointThing[2]:
 		"FlashLight":
 			$ToolPoint_3/AnimatedSprite2D.frame = 0
@@ -45,7 +51,17 @@ func _ready() -> void:
 			$ToolPoint_3/AnimatedSprite2D.frame = 1
 		"DoorKey":
 			$ToolPoint_3/AnimatedSprite2D.frame = 2
-	
+		"NOTHING":
+			$ToolPoint_3/AnimatedSprite2D.visible = false
+	match ToolPointThing[3]:
+		"FlashLight":
+			$ToolPoint_4/AnimatedSprite2D.frame = 0
+		"Door":
+			$ToolPoint_4/AnimatedSprite2D.frame = 1
+		"DoorKey":
+			$ToolPoint_4/AnimatedSprite2D.frame = 2
+		"NOTHING":
+			$ToolPoint_4/AnimatedSprite2D.visible = false
 		
 	
 	
@@ -178,3 +194,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		SceneManager.change_scene("uid://cqif4267fxo6k")
 		
+
+
+func _on_touch_ToolPoint4(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		_ToolPointHandler(4, $ToolPoint_4)
