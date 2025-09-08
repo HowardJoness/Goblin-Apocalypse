@@ -1,11 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dj361ax6pb4d5"]
+[gd_scene load_steps=25 format=3 uid="uid://dj361ax6pb4d5"]
 
 [ext_resource type="Script" uid="uid://blb6dslclsliy" path="res://scripts/player.gd" id="1_xo3ru"]
 [ext_resource type="Texture2D" uid="uid://cqbaeya3jywlt" path="res://srcs/images/idle.png" id="2_fvtld"]
 [ext_resource type="Texture2D" uid="uid://ck03qkfhpsgl3" path="res://srcs/images/walk.png" id="3_ct4mp"]
 [ext_resource type="AudioStream" uid="uid://cupcxy3mbepn" path="res://srcs/sounds/among us walking sound effect.mp3" id="4_ct4mp"]
-[ext_resource type="Texture2D" uid="uid://bllen1msbq7yx" path="res://srcs/images/Goblin.png" id="5_oh5ij"]
-[ext_resource type="AudioStream" uid="uid://dmndw1t0nn2cg" path="res://srcs/sounds/GoblinShout.MP3" id="6_hp4bs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s4jxa"]
 size = Vector2(12, 25)
@@ -144,9 +142,6 @@ fill = 1
 fill_from = Vector2(0.512821, 0.472934)
 fill_to = Vector2(0.937322, 0.0512821)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2vtq"]
-size = Vector2(18, 28)
-
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(60, 67)
 script = ExtResource("1_xo3ru")
@@ -178,26 +173,4 @@ texture_scale = 1.17
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ct4mp")
 autoplay = true
-parameters/looping = true
-
-[node name="Goblin" type="Sprite2D" parent="."]
-position = Vector2(-20, -2)
-scale = Vector2(0.025, 0.025)
-texture = ExtResource("5_oh5ij")
-
-[node name="Area2D" type="Area2D" parent="Goblin"]
-position = Vector2(600, 80)
-scale = Vector2(40, 40)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Goblin/Area2D"]
-position = Vector2(-44, -1)
-shape = SubResource("RectangleShape2D_g2vtq")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Goblin"]
-position = Vector2(160, 0)
-scale = Vector2(40, 40)
-stream = ExtResource("6_hp4bs")
-volume_db = -5.0
-autoplay = true
-max_distance = 150.0
 parameters/looping = true
