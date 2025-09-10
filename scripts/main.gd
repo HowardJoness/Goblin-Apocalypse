@@ -11,3 +11,7 @@ func _on_begin_pressed() -> void:
 func _on_exit_game_pressed() -> void:
 	# 退出游戏按钮被点击
 	get_tree().quit()
+
+
+func _on_charactor_choice_pressed() -> void:
+	SceneManager.change_scene("uid://ciltdcwxwkg25")

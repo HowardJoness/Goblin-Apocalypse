@@ -1,0 +1,222 @@
+[gd_scene load_steps=22 format=3 uid="uid://ciltdcwxwkg25"]
+
+[ext_resource type="Script" uid="uid://dy57e1q2rrhit" path="res://scripts/character_change.gd" id="1_6l6r6"]
+[ext_resource type="FontFile" uid="uid://b3tbevv3nmiq8" path="res://srcs/fonts/AlimamaDaoLiTi.otf" id="1_frwyl"]
+[ext_resource type="Texture2D" uid="uid://ck03qkfhpsgl3" path="res://srcs/images/walk.png" id="3_6l6r6"]
+[ext_resource type="Texture2D" uid="uid://dc04bf045xisg" path="res://srcs/images/walk2.png" id="4_6l6r6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7b46"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4wxg"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(48, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bup7g"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(96, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ja17"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(144, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4iqv"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(192, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42h83"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(240, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuf2t"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(288, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrjdb"]
+atlas = ExtResource("3_6l6r6")
+region = Rect2(336, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12o7m"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(0, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwpnh"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(48, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmv4"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(96, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55cvi"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(144, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44x8m"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(192, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hsja"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(240, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w44ln"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(288, 320, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hqt2"]
+atlas = ExtResource("4_6l6r6")
+region = Rect2(336, 320, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12o7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7b46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4wxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bup7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ja17")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4iqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42h83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iuf2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrjdb")
+}],
+"loop": true,
+"name": &"run_1",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12o7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwpnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbmv4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55cvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44x8m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hsja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w44ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hqt2")
+}],
+"loop": true,
+"name": &"run_2",
+"speed": 12.0
+}]
+
+[node name="CharacterChange" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6l6r6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 222.0
+offset_right = 231.0
+offset_bottom = 289.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_frwyl")
+theme_override_font_sizes/font_size = 66
+text = "请选择你的形象"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(955, 548)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_12o7m")
+animation = &"run_2"
+autoplay = "run_1"
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -231.0
+offset_top = 688.0
+offset_right = 231.0
+offset_bottom = 755.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_frwyl")
+theme_override_font_sizes/font_size = 55
+text = "沉雷"
+horizontal_alignment = 1
+
+[node name="Left" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -537.0
+offset_top = -33.0
+offset_right = -342.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_frwyl")
+theme_override_font_sizes/font_size = 42
+text = "←"
+
+[node name="Right" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 368.0
+offset_top = -33.0
+offset_right = 563.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_frwyl")
+theme_override_font_sizes/font_size = 42
+text = "→"
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

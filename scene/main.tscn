@@ -172,4 +172,5 @@ mouse_filter = 2
 color = Color(1, 0, 0, 0.34902)
 
 [connection signal="pressed" from="VBoxContainer/Begin" to="." method="_on_begin_pressed"]
+[connection signal="pressed" from="VBoxContainer/CharactorChoice" to="." method="_on_charactor_choice_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]

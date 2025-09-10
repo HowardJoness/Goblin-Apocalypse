@@ -44,12 +44,12 @@ func _physics_process(delta: float) -> void:
 	if input_dir != Vector2.ZERO:
 		input_dir = input_dir.normalized()
 		velocity = input_dir * SPEED
-		$AnimatedSprite2D.play("run")  # 播放走路动画
+		$AnimatedSprite2D.play( "run_%d" % GameManager.charactor_id)  # 播放走路动画
 		if not($AudioStreamPlayer2D.playing):
 			$AudioStreamPlayer2D.play()
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, DECELERATION * delta)
-		$AnimatedSprite2D.play("idle")  # 播放待机动画
+		$AnimatedSprite2D.play("idle_%d" % GameManager.charactor_id)  # 播放待机动画
 		$AudioStreamPlayer2D.stop()
 	# 镜像处理
 	if velocity.x < 0:
