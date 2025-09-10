@@ -23,7 +23,7 @@ func add_map2():
 	item_instance.map_description = "我们收容，我们控制，我们保护。你好，这里是教学管理处，我们收容一些不听话的学生。包括，你。"
 	item_instance.target_scene_path = "uid://btb3qq41j5jv8"
 	item_instance.map_image_path = "res://srcs/images/容器 21@1x.png"
-	item_instance.difficuty = 3
+	item_instance.difficuty = 2
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
