@@ -50,8 +50,8 @@ func _GoblinSpeed():
 
 func _goGoblin():
 	await get_tree().create_timer(5).timeout
-	for i in range(10):
-		$CanvasLayer/Tips.set_tip("哥布林还有 " + str(10 - (i+1)) + " 秒到达战场")
+	for i in range(15):
+		$CanvasLayer/Tips.set_tip("哥布林还有 " + str(15 - (i+1)) + " 秒到达战场")
 		await get_tree().create_timer(1).timeout
 	$Goblin.visible = true
 	$Goblin/AudioStreamPlayer2D.play()
@@ -161,6 +161,8 @@ func _on_touch_ToolPoint3(body: Node2D) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		$Player.FlashLightScale = 0
+		$Player.visible = false
+		$Goblin/AudioStreamPlayer2D.stop()
 		$KillSound.play()
 		await get_tree().create_timer(1).timeout
 		GameManager.GameWin = false
