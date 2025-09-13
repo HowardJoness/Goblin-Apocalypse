@@ -2,6 +2,7 @@ extends Node
 
 var bgm_player: AudioStreamPlayer
 var GameWin = true
+var LastRoomUID = ""
 # 在这里管理所有 BGM
 var bgm_dict = {
 	"main": preload("res://srcs/sounds/bgm1.mp3")

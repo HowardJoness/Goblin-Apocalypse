@@ -24,6 +24,17 @@ func add_map2():
 	item_instance.target_scene_path = "uid://btb3qq41j5jv8"
 	item_instance.map_image_path = "res://srcs/images/容器 21@1x.png"
 	item_instance.difficuty = 2
+func add_map3():
+	var item_instance = MapChoiceScene.instantiate()
+	var hbox = $ScrollContainer/HBoxContainer
+	hbox.add_child(item_instance)
+	
+	# ✅ 设置实例化对象的属性
+	item_instance.map_name = "SU_学生会"
+	item_instance.map_description = "您好，这里是学生会。秉承着开放、包容、多元的原则，我们会为您解决任何问题。"
+	item_instance.target_scene_path = "uid://cbavdvv3n4yr2"
+	item_instance.map_image_path = "res://srcs/images/SU.png"
+	item_instance.difficuty = 3
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -33,3 +44,4 @@ func _ready() -> void:
 	# 进入地图选择场景后的准备工作
 	add_map()
 	add_map2()
+	add_map3()

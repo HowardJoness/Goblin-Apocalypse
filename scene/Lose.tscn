@@ -82,13 +82,17 @@ offset_right = 2058.0
 offset_bottom = 1085.0
 texture = SubResource("CompressedTexture2D_v5rin")
 
-[node name="Goon" type="Button" parent="."]
-z_index = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 154.0
 offset_top = 617.0
 offset_right = 354.0
 offset_bottom = 668.0
+theme_override_constants/separation = 115
+
+[node name="Goon" type="Button" parent="HBoxContainer"]
+z_index = 1
+layout_mode = 2
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_v5rin")
 theme_override_font_sizes/font_size = 50
@@ -98,7 +102,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_o7a36")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b0gr2")
 text = "返回主页"
 
-[node name="ColorRect" type="ColorRect" parent="Goon"]
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/Goon"]
 z_as_relative = false
 layout_mode = 1
 anchors_preset = 12
@@ -112,4 +116,31 @@ grow_vertical = 0
 mouse_filter = 2
 color = Color(1, 0, 0, 0.34902)
 
-[connection signal="pressed" from="Goon" to="." method="_on_leave_pressed"]
+[node name="MapChoice" type="Button" parent="HBoxContainer"]
+z_index = 1
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_fonts/font = ExtResource("3_v5rin")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_81216")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nymlp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o7a36")
+theme_override_styles/normal = SubResource("StyleBoxFlat_b0gr2")
+text = "选择地图"
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/MapChoice"]
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -21.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+color = Color(1, 0, 0, 0.34902)
+
+[connection signal="pressed" from="HBoxContainer/Goon" to="." method="_on_leave_pressed"]
+[connection signal="pressed" from="HBoxContainer/MapChoice" to="." method="_on_mapchoice_pressed"]
